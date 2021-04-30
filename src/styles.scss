@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+@font-face {
+    font-family: "HarryP";
+    src: local("HarryP"), url(./assets/fonts/harryP/HARRYP__.TTF) format("truetype");
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+body {
+    background: url('./assets/images/castle.jpg') no-repeat center center fixed;
+}
+
+.modal-content {
+    background-color: #343a40;
+    color: #fff;
+}
+
+h1 { 
+    color: #fff;
+}

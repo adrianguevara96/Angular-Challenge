@@ -1,0 +1,36 @@
+.nav-bar {
+    font-family: "HarryP", Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+    background-color: transparent !important;
+
+    #navbarNavDropdown{
+        justify-content: center;
+
+        ul {
+            li {
+                padding-left: 1vw;
+                padding-right: 1vw;
+            }
+        }
+    }
+
+    a {
+        letter-spacing: 0.1vw;
+        color: #fff;
+    }
+
+    .dropdown-menu {
+        a {
+            font-size: 1.5vw;
+        }
+    }
+
+    .logo {
+        width: 10%;
+        height: auto;
+    }
+
+    .colorBlack {
+        color: black !important;
+    }
+}

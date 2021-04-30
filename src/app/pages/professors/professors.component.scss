@@ -1,0 +1,33 @@
+.professors {
+    
+    .table-wrap {
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    #search5 {
+        background-color: rgba(255,255,255,0.6);
+    }
+
+    h1 {
+        font-family: 'HarryP';
+        font-size: 4vw;
+        padding: 2vh 0 0 0;
+    }
+
+    text-align: center;
+    height: 100%;
+
+    &-image{
+        border-radius: 50%;
+    }
+    
+    table {
+        border-radius: 10px;
+
+        th{
+            border-top: transparent;
+            border-bottom: transparent;
+        }
+    }
+}

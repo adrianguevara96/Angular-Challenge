@@ -1,0 +1,23 @@
+.home {
+    font-family: "HarryP", Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+
+    img {
+        display: none;
+    }
+
+    @media screen and (min-width: 1280px) {
+        padding: 20px 50px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        top: 19vh;
+
+        img {
+            display: flex;
+        }
+    }
+}
+

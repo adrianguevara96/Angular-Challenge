@@ -1,0 +1,128 @@
+<div class="students">
+    <div class="container">
+        <h1>Students</h1>
+
+        <div class="students-div">
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter">
+                Add Student
+            </button>
+            <button style="display: none" #clickMe id="clickMe" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter2">
+                Register Successfull
+            </button>
+        </div>
+
+        <div class="table-wrap">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">
+                      <img width="24px" height="24px" src="https://img.icons8.com/pastel-glyph/64/000000/search--v1.png"/>
+                    </span>
+                </div>
+                <input id="search3" #search3 (input)="searchStudent(search3.value)" type="text" class="form-control" placeholder="Search a Student" aria-label="student" aria-describedby="basic-addon1">
+            </div>
+            <table class="table table-hover table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Patronus</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Image</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor=" let student of studentsList; let i = index">
+                    <td class="text-center"> {{ i+1 }} </td>
+                    <td>
+                        <div>
+                            <span>{{ student.name }}</span>
+                        </div>
+                    </td>
+                    <td> 
+                        <span *ngIf="student.patronus === '' ">
+                            -
+                        </span>
+                        <span style="text-transform: capitalize;" *ngIf="student.patronus !== '' ">
+                            {{ student.patronus }}
+                        </span>
+                    </td>
+                    <td> 
+                        <span *ngIf="student.age === 0">
+                            -
+                        </span>
+                        <span *ngIf="student.age !== 0">
+                            {{ student.age }}
+                        </span>
+                    </td>
+                    <td>
+                        <img class="students-image" src="{{ student.image }}" width="70px" height="70px"/>
+                    </td>
+                  </tr>
+                </tbody>
+            </table> 
+          </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Add Student</h5>
+                <button #buttonClose id="buttonClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="studentForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <input type="text" class="form-control" formControlName="name" placeholder="Name" required>
+                          <div class="invalid-feedback">
+                            Please choose a Name.
+                          </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <input type="text" class="form-control" formControlName="patronus" placeholder="Patronus" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <input id="inputAge" #inputAge (keypress)="numberOnlyValidation($event)" type="text" name="lol" class="form-control" formControlName="age" placeholder="Age" required>
+                        </div>
+                        <div class="form-group col-md-6 custom-file">
+                            <input type="file" class="custom-file-input" formControlName="image" lang="en">
+                            <label style="text-align: left;" class="custom-file-label">Select Image</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" (click)="submit()" class="btn btn-primary">Register</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal Successful-->
+    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Register</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Register Student Successful
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

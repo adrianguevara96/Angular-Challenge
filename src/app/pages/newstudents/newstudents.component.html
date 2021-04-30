@@ -1,0 +1,58 @@
+<div class="students">
+    <div class="container">
+        <h1>New Students</h1>
+
+        <div class="table-wrap">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">
+                      <img width="24px" height="24px" src="https://img.icons8.com/pastel-glyph/64/000000/search--v1.png"/>
+                    </span>
+                </div>
+                <input id="search4" #search4 (input)="searchNewStudent(search4.value)" type="text" class="form-control" placeholder="Search a New Student" aria-label="student" aria-describedby="basic-addon1">
+            </div>
+            <table class="table table-hover table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Patronus</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Image</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor=" let student of studentsList; let i = index">
+                    <td class="text-center"> {{ i+1 }} </td>
+                    <td>
+                        <div>
+                            <span>{{ student.name }}</span>
+                        </div>
+                    </td>
+                    <td> 
+                        <span *ngIf="student.patronus === '' ">
+                            -
+                        </span>
+                        <span style="text-transform: capitalize;" *ngIf="student.patronus !== '' ">
+                            {{ student.patronus }}
+                        </span>
+                    </td>
+                    <td> 
+                        <span *ngIf="student.age === 0">
+                            -
+                        </span>
+                        <span *ngIf="student.age !== 0">
+                            {{ student.age }}
+                        </span>
+                    </td>
+                    <td>
+                        <img class="students-image" src="{{ student.image }}" width="70px" height="70px"/>
+                    </td>
+                  </tr>
+                </tbody>
+            </table> 
+          </div>
+    </div>
+</div>
+
+

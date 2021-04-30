@@ -1,0 +1,59 @@
+<div class="characters">
+    <div class="container">
+        <h1>Characters</h1>
+
+        <div class="table-wrap">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">
+                      <img width="24px" height="24px" src="https://img.icons8.com/pastel-glyph/64/000000/search--v1.png"/>
+                    </span>
+                </div>
+                <input #search2 [(ngModel)]="search22" (input)="searchCharacter(search2.value)" type="text" class="form-control" placeholder="Search a Character" aria-label="character" aria-describedby="basic-addon1">
+            </div>
+            <table class="table table-hover table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Patronus</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Image</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor=" let character of charactersList; let i = index">
+                    <td class="text-center"> {{ i+1 }} </td>
+                    <td>
+                        <div>
+                            <span>{{ character.name }}</span>
+                        </div>
+                    </td>
+                    <td> 
+                        <span *ngIf="character.patronus === '' ">
+                            -
+                        </span>
+                        <span style="text-transform: capitalize;" *ngIf="character.patronus !== '' ">
+                            {{ character.patronus }}
+                        </span>
+                    </td>
+                    <td> 
+                        <span *ngIf="character.age === 0">
+                            -
+                        </span>
+                        <span *ngIf="character.age !== 0">
+                            {{ character.age }}
+                        </span>
+                    </td>
+                    <td>
+                        <img class="characters-image" src="{{ character.image }}" width="70px" height="70px"/>
+                    </td>
+                  </tr>
+                </tbody>
+            </table> 
+          </div>
+        <!-- 
+-->
+    </div>
+</div>
+

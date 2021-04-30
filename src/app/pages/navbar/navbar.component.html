@@ -1,0 +1,41 @@
+<div class="nav-bar">
+    <nav style="background-color: transparent !important;" class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/home">
+            <img src="../../../assets/images/hogwartLogo.png" width="100px" height="50px">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Characters
+                </a>
+                <div style="background-color: rgba(255,255,255,0.6);" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item colorBlack" routerLink="/characters/Slytherin">Slytherin</a>
+                    <a class="dropdown-item colorBlack" routerLink="/characters/Gryffindor">Gryffindor</a>
+                    <a class="dropdown-item colorBlack" routerLink="/characters/Ravenclaw">Ravenclaw</a>
+                    <a class="dropdown-item colorBlack" routerLink="/characters/Hufflepuff">Hufflepuff</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/students">Students</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/newstudents">
+                    <label>
+                        New Students <span *ngIf="newStudents !== 0" style="font-size: 1vw; vertical-align: text-top;" class="badge badge-pill badge-success">1</span>
+                    </label>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/teachers">Teachers</a>
+            </li>
+        </ul>
+        </div>
+    </nav>
+</div>
